@@ -3,7 +3,7 @@
 // index page
 exports.list = function(req, res) {
 	res.render('index', {
-		title: 'TORC'
+		title: 'TORCH'
 	})
 	// Category
 	// 	.findOne({name: 'Programming'})
