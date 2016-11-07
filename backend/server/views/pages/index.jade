@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  .container
+    .blog-header
+      h1.blog-title TORC
+      p.lead.blog-description A Tool for Organizing Referrencing Contents.
+    main(ng-controller="MainCtrl")
+      .page-header
+        .row
+          .col-md-8
+            h2 Projects
+          .col-md-4.text-right
+            button.btn.btn-default(data-toggle="modal" data-target="#new-category") Create Category
+            button.btn.btn-info(data-toggle="modal" data-target="#new-project") Create Project
+      project
+      include ../includes/modals
+
+
+block scripts
+  script(src="/js/app.js")
+  script(src="/js/controllers/main-controller.js")
+  script(src="/js/directives/project-directive.js")
+  script(src="/js/directives/star-rating-directive.js")
+  //- script(src="/js/index.js")

@@ -1,0 +1,16 @@
+doctype
+html
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(name="description" content="")
+		meta(name="author" content="Gaoping Huang")
+		link(rel="icon" href="/images/favicon.ico")
+			
+		title #{title}
+		include ./includes/head
+	body(ng-app="myApp")
+		block content
+		footer.blog-footer Copyright &copy; TORC 2016
+		block scripts

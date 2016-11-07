@@ -1,0 +1,51 @@
+
+.container {
+    width: 600px;
+    font-size: 16px;
+    /*border: 1px solid #ddd;*/
+}
+
+.blog-header {
+  border-bottom: 1px solid #ddd;
+}
+
+#to-main-btn {
+  float: right;
+  margin-right: 15px;
+}
+
+.content-list {
+  min-height: 100px;
+}
+
+form {
+	padding: 20px 0px 0px;
+}
+
+form label {
+	font-weight: normal;
+}
+
+textarea {
+    width: 380px;
+    min-height: 50px;
+    margin: 0 auto;
+    background: #eee;
+    border: 0;
+    padding: 10px;
+    font: 13px monospace;
+}
+
+
+.fa-star {
+	color: gold;
+}
+
+.star-rating {
+  line-height:32px;
+  font-size:1.5em;
+  cursor: pointer;
+}
+.star-rating span {
+	padding-right: 15px;
+}

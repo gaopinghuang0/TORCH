@@ -1,0 +1,29 @@
+#new-category.modal.fade(tabindex="-1" role="dialog")
+    .modal-dialog
+        .modal-content
+            .modal-header
+                button.close(data-dismiss="modal" aria-label="Close")
+                    span(aria-hidden="true") &times;
+                .modal-title Category name
+            .modal-body
+                input(ng-model="newCategoryName").form-control
+            .modal-footer
+                button.btn.btn-default(data-dismiss="modal") Close
+                button.btn.btn-primary(ng-click="newCategory()") Save
+
+
+#new-project.modal.fade(tabindex="-1" role="dialog")
+    .modal-dialog
+        .modal-content
+            .modal-header
+                button.close(data-dismiss="modal" aria-label="Close")
+                    span(aria-hidden="true") &times;
+                .modal-title Project name
+            .modal-body
+                input(ng-model="newProjectName").form-control
+            .modal-footer
+                button.btn.btn-default(data-dismiss="modal") Close
+                button.btn.btn-primary(ng-click="newProject()") Save
+
+
+

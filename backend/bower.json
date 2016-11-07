@@ -1,0 +1,28 @@
+{
+  "name": "gaoping-blog",
+  "description": "Gaoping's personal blog",
+  "main": "server.js",
+  "authors": [
+    "gaopinghuang0"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "public/libs"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular": "~1.4.8"
+  },
+  "keywords": [
+    "blog",
+    "MEAN stack"
+  ],
+  "private": true
+}

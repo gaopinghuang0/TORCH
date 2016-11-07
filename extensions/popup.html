@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/popup.css">
+  <title>Popup page</title>
+  <script src="js/jquery-1.12.3.min.js"></script>
+  <script src="js/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+  <div class="container" ng-controller="PopupCtrl">
+    <div class="row">
+      <div class="col-xs-12 blog-header">
+        <h2 class="blog-title">TORC
+        <a href="http://localhost:3000" target="_blank" id="to-main-btn" class="glyphicon glyphicon-new-window" title="Open homepage"></a>
+        </h2>
+      </div>
+    </div>
+    <!-- <div id="popup-page" class="btn btn-default">popup</div> -->
+    <!-- content list for this page -->
+    <div class="row content-list">
+      <div class="list-group">
+        <a href="#" class="list-group-item" ng-repeat="content in contents" ng-click="jumpTo(content)" title="Click and goto saved position">
+          {{content.text}}
+        </a>
+        <div class="list-group-item" ng-show="contents.length === 0">(No saved content. Please highlight text and right click.)</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/popup-controller.js"></script>
+</body>
+
+</html>

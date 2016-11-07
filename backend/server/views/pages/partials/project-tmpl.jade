@@ -1,0 +1,54 @@
+
+.project
+  div(ng-repeat="project in projects")
+    .project-header
+      h3(data-target="#id{{project._id}}", data-toggle="toggle", data-init-status="{{ $last ? 'show' : 'hide'}}")
+        i.glyphicon.glyphicon-chevron-right
+        span {{project.name}}
+      span.header-right
+        span.dropdown
+          span.glyphicon.glyphicon-menu-hamburger.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+          ul.dropdown-menu
+            li(ng-show="project.shouldDisplayWebsite")
+              a(href="javascript:;", ng-click="displayCategory(project);") Display by category
+            li(ng-hide="project.shouldDisplayWebsite")
+              a(href="javascript:;", ng-click="displayWebsite(project);") Display by website
+            li.divider
+            li
+              a(href="javascript:;", ng-click="deleteProject(project)") Delete project
+    div(id="id{{project._id}}")
+      div.project-item(ng-show="project.shouldDisplayWebsite", ng-repeat="website in project.websites")
+        h4.website-header
+          span(data-target="#id{{website._id}}", data-toggle="toggle", data-init-status="show")
+            i.glyphicon.glyphicon-chevron-right
+          a(href="{{website.url}}" target="_blank") {{website.title}}
+          span.dropdown
+            span.glyphicon.glyphicon-option-vertical.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+            ul.dropdown-menu
+              li
+                a(href="javascript:;", ng-click="sortByRating(website)") Sort by rating
+              li(ng-hide="website.isPDF")
+                a(href="javascript:;", ng-click="sortByLocation(website)") Sort by location
+              li.divider
+              li
+                a(href="javascript:;" ng-click="deleteWebsite(website)") Delete website
+        div.website-item(id="id{{website._id}}")
+          ul.list-group
+            li.list-group-item(ng-repeat="content in website.contents")
+              .row
+                .col-md-8 {{content.text}}
+                .col-md-2
+                  star-rating(data-max=3, data-content="content")
+                .col-md-2
+                  span.category-item(ng-repeat="category in content.categories", style="background-color:{{computeColor(category.name)}};") # {{category.name}}
+      div(ng-hide="project.shouldDisplayWebsite", ng-repeat="(categoryName, contents) in project.categories")
+        h4.category-header
+          span.category-item(style="background-color:{{computeColor(categoryName)}};") # {{categoryName}}
+        ul.list-group
+          li.list-group-item(ng-repeat="content in contents")
+            .row
+                .col-md-8 {{content.text}}
+                .col-md-2
+                  star-rating(data-max=3, data-content="content")
+                .col-md-2.url-truncate
+                  a(href="{{content.url}}" target="_blank" title="{{content.title}}") {{content.title}}
