@@ -1,5 +1,5 @@
-## Welcome to gaoping-blog
-Gaoping's personal blog, built on the MEAN stack.
+## Backend of TORCH
+
 
 ### Tech Stack
 - MEAN stack (MongoDB, Express, Angularjs, Nodejs)
