@@ -14,7 +14,7 @@
     <div class="row">
       <div class="col-xs-12 blog-header">
         <h2 class="blog-title">TORCH
-        <a href="http://localhost:3000" target="_blank" id="to-main-btn" class="glyphicon glyphicon-new-window" title="Open homepage"></a>
+        <a href="http://localhost:3001" target="_blank" id="to-main-btn" class="glyphicon glyphicon-new-window" title="Open homepage"></a>
         </h2>
       </div>
     </div>
@@ -25,7 +25,7 @@
         <a href="#" class="list-group-item" ng-repeat="content in contents" ng-click="jumpTo(content)" title="Click and goto saved position">
           {{content.text}}
         </a>
-        <div class="list-group-item" ng-show="contents.length === 0">(No saved content. Please highlight text and right click.)</div>
+        <div class="list-group-item" ng-show="contents.length === 0"><em>(No saved content. Please highlight text and then right click.)</em></div>
       </div>
     </div>
   </div>

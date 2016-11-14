@@ -11,7 +11,7 @@ angular.module('myApp')
             url = currTab.url;
             console.log(currTab)
         if (url) {
-            $http.post('http://localhost:3000/api/content/list', {url: url})
+            $http.post('http://localhost:3001/api/content/list', {url: url})
             .success(function(response) {
                 $scope.contents = response;
             }).error(function(response) {

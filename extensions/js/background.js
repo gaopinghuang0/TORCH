@@ -48,7 +48,7 @@ function onClickHandler(info, tab) {
             active: false
         }, function(tab) {
             var w = 650,
-                h = 300,
+                h = 320,
                 left = (screen.width/2) - (w/2),
                 top = (screen.height/2) - (h/2);
 
@@ -66,7 +66,7 @@ function onClickHandler(info, tab) {
             }, function(window) {
                 // get project id if saved
                 $.ajax({
-                    url: 'http://localhost:3000/api/website/info',
+                    url: 'http://localhost:3001/api/website/info',
                     method: 'POST',
                     data: {'website': msg.url}
                 }).success(function(response) {

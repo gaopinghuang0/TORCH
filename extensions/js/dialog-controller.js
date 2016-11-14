@@ -3,7 +3,7 @@
 angular.module('myApp', [])
 .controller('DialogCtrl', function DialogCtrl($http, $scope) {
 
-    $http.get('http://localhost:3000/api/init/info')
+    $http.get('http://localhost:3001/api/init/info')
     .success(function(response) {
         if (response.projects) {
             $scope.projects = response.projects
@@ -70,7 +70,7 @@ angular.module('myApp', [])
         console.log(data)
         $.ajax({
             method: 'POST',
-            url: 'http://localhost:3000/api/website/save',
+            url: 'http://localhost:3001/api/website/save',
             data: data
         }).success(function(response) {
             console.log(response)
