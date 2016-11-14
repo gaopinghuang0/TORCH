@@ -39,42 +39,10 @@ angular.module('myApp')
 				})
 			}
 
+			this.color = d3.scaleOrdinal(d3.schemeSet3);
+
 			$scope.computeColor = function(categoryName) {
-				return ColorLuminance(stringToColour(categoryName), 3);
-
-				// Credit: http://stackoverflow.com/a/16348977/4246348
-				function stringToColour(str) {
-
-				    // str to hash
-				    for (var i = 0, hash = 0; i < str.length; hash = str.charCodeAt(i++) + ((hash << 5) - hash));
-
-				    // int/hash to hex
-				    for (var i = 0, colour = "#"; i < 3; colour += ("00" + ((hash >> i++ * 8) & 0xFF).toString(16)).slice(-2));
-
-				    return colour;
-				}
-
-				// Credit: http://www.sitepoint.com/javascript-generate-lighter-darker-color/
-				// get a lighter color
-				function ColorLuminance(hex, lum) {
-
-					// validate hex string
-					hex = String(hex).replace(/[^0-9a-f]/gi, '');
-					if (hex.length < 6) {
-						hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
-					}
-					lum = lum || 0;
-
-					// convert to decimal and change luminosity
-					var rgb = "#", c, i;
-					for (i = 0; i < 3; i++) {
-						c = parseInt(hex.substr(i*2,2), 16);
-						c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
-						rgb += ("00"+c).substr(c.length);
-					}
-
-					return rgb;
-				}
+				return self.color(categoryName);
 			}
 
 			$scope.displayWebsite = function(project) {
