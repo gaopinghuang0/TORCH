@@ -1,6 +1,7 @@
 // get all controllers
 var Index = require('./controllers/index')
 var API = require('./controllers/api')
+var User = require('./controllers/user')
 
 
 module.exports = function(app) {
@@ -15,8 +16,8 @@ module.exports = function(app) {
 	})
 
 	// Index
-	app.get('/', Index.list)
-	app.get('/home', Index.list)
+	app.get('/', User.signinRequired, Index.list)
+	app.get('/home', User.signinRequired, Index.list)
 
 	// For Angular partial templates
 	app.get('/partials/:name', API.partials)
@@ -37,5 +38,11 @@ module.exports = function(app) {
 	// Category
 
 	// Search Results
+
+
+	// // User
+	// app.post('/user/signin', User.signin)
+	// // app.post('/user/signup', User.signup)
+	// app.get('/signin', User.showSignin)
 
 }
