@@ -1,9 +1,11 @@
+var isLocal = false;
+var g_uri = isLocal ? 'http://localhost:3001' : 'http://torch.gaopinghuang.com';
 
 
 angular.module('myApp', [])
 .controller('DialogCtrl', function DialogCtrl($http, $scope) {
 
-    $http.get('http://localhost:3001/api/init/info')
+    $http.get(g_uri + '/api/init/info')
     .success(function(response) {
         if (response.projects) {
             $scope.projects = response.projects
@@ -70,7 +72,7 @@ angular.module('myApp', [])
         console.log(data)
         $.ajax({
             method: 'POST',
-            url: 'http://localhost:3001/api/website/save',
+            url: g_uri + '/api/website/save',
             data: data
         }).success(function(response) {
             console.log(response)

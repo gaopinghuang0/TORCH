@@ -1,3 +1,5 @@
+var isLocal = false;
+var g_uri = isLocal ? 'http://localhost:3001' : 'http://torch.gaopinghuang.com';
 
 // contact between background and popup
 function updateDomInfo(info) {
@@ -66,7 +68,7 @@ function onClickHandler(info, tab) {
             }, function(window) {
                 // get project id if saved
                 $.ajax({
-                    url: 'http://localhost:3001/api/website/info',
+                    url: g_uri + '/api/website/info',
                     method: 'POST',
                     data: {'website': msg.url}
                 }).success(function(response) {

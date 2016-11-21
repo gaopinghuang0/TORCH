@@ -1,6 +1,10 @@
 
 angular.module('myApp', [])
 
+var isLocal = false;
+var g_uri = isLocal ? 'http://localhost:3001' : 'http://torch.gaopinghuang.com';
+
+
 angular.module('myApp')
 .controller('PopupCtrl', function PopupCtrl($http, $scope) {
     'use strict'
@@ -11,7 +15,7 @@ angular.module('myApp')
             url = currTab.url;
             console.log(currTab)
         if (url) {
-            $http.post('http://localhost:3001/api/content/list', {url: url})
+            $http.post(g_uri + '/api/content/list', {url: url})
             .success(function(response) {
                 $scope.contents = response;
             }).error(function(response) {
