@@ -1,4 +1,4 @@
 ## TORCH
-A Tool for Organizing Referencing Contents
+A Chrome Extension for bookmarking important contents on websites and PDFs
 
 Including backend and chrome extensions.
